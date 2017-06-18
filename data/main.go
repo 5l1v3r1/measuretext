@@ -37,7 +37,7 @@ func main() {
 	var dataFile string
 
 	flag.StringVar(&chromeHost, "chrome", "localhost:9222", "Chrome DevTools host")
-	flag.StringVar(&dataFile, "data", "data_seed.txt", "text to seed data")
+	flag.StringVar(&dataFile, "data", "val_seed.txt", "text to seed data")
 	flag.Parse()
 
 	data, err := ioutil.ReadFile(dataFile)

@@ -16,10 +16,19 @@ if [ ! -f out_net ]; then
 fi
 
 echo 'Training...'
-neurocli train -adam default -samples data/data.txt -net out_net \
-  -cost mse -batch 128
+while true; do gunzip data/data.txt.gz -c || break; done |
+  neurocli train \
+    -adam default \
+    -net out_net \
+    -cost mse -batch 128
 
 echo 'Validating...'
 
-neurocli train -step 0 -samples data/val.txt -net out_net \
-  -cost mse -batch 100 -stopsamples 399
+neurocli train \
+  -step 0 \
+  -samples data/val.txt \
+  -net out_net \
+  -cost mse \
+  -batch 100 \
+  -stopsamples 399
+
