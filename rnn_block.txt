@@ -1,0 +1,5 @@
+# Forward and backward RNN architecture.
+
+Input(w=1, h=1, d=256)
+Linear(scale=16)
+Vanilla(out=20)

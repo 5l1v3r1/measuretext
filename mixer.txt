@@ -1,0 +1,6 @@
+# Mix outputs from two RNN blocks.
+
+Input(w=2, h=1, d=20)
+FC(out=20)
+Tanh
+FC(out=1)
